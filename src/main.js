@@ -21,20 +21,21 @@ const getMeal = (meal) => {
   	const newInnerHTML = `
 		<div>
 			<div class="header">
-        <div>
-          <h4>${meal.strMeal}</h4>
-          <img src="${meal.strMealThumb}" alt="Meal Image">
-        </div>
+				<div>
+					<h4>${meal.strMeal}</h4>
+					<img src="${meal.strMealThumb}" alt="Meal Image">
+				</div>
         ${meal.strYoutube ? `
-		      <div>
+		      	<div>
 			      <h5>Video Recipe</h5>
-            <div>
-              <iframe width="420" height="315"
-              src="https://www.youtube.com/embed/${meal.strYoutube.slice(-11)}">
-              </iframe>
-            </div>
-       </div>
-        <div class="info">
+					<div>
+						<iframe width="420" height="315"
+						src="https://www.youtube.com/embed/${meal.strYoutube.slice(-11)}">
+						</iframe>
+					</div>
+       			</div>
+	  		</div>
+        	<div class="info">
 				  ${meal.strCategory ? `<p><strong>Category:</strong> ${meal.strCategory}</p>` : ''}
 				  ${meal.strArea ? `<p><strong>Area:</strong> ${meal.strArea}</p>` : ''}
 				  ${meal.strTags ? `<p><strong>Tags:</strong> ${meal.strTags.split(',').join(', ')}</p>` : ''}
@@ -42,10 +43,10 @@ const getMeal = (meal) => {
 				  <ul>
 					  ${ingredients.map(ingredient => `<li>${ingredient}</li>`).join('')}
 				  </ul>
-			    </div>
-			    <div>
-				    <p>${meal.strInstructions}</p>
-			    </div>
+			</div>
+			<div class="inst">
+				<p>${meal.strInstructions}</p>
+			</div>
 		</div>` : ''}
 	`;
 	
